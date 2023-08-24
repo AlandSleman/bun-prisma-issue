@@ -1,13 +1,17 @@
 {
-  "name": "new-app",
+  "name": "bun-prisma-issue",
   "version": "1.0.50",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "bun run --watch src/index.ts"
+    "prisma:generate": "prisma generate",
+    "dev": "bun run --watch src/index.ts",
+    "build": "bun build ./src/index.ts --outdir ./out --target bun",
+    "start":"bun ./out/index.js"
   },
   "dependencies": {
     "@prisma/client": "^5.2.0",
-    "elysia": "latest"
+    "elysia": "latest",
+    "prisma": "^5.2.0"
   },
   "devDependencies": {
     "bun-types": "latest"
